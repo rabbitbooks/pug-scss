@@ -4,17 +4,18 @@ block variables
 	-var bodyClass="page"
 
 block content
-	.container-fluid
-		.row
-			.col-md-1
-				aside
-					nav.main-navigation
-			.col-md-10
-				main.js-page-slider.page-slider
-					div
-						include partials/page-1
-					div
-						include partials/page-2
-					div.page-slide 3
-					div.page-slide 4
-					div.page-slide 5
+	div(class=`${bodyClass}_inner`)
+		.container-fluid 
+			.row
+				.col-md-1
+					aside
+						nav.navigation
+				.col-md-10
+					main.js-page-slider.page-slider
+						div
+							include partials/page-1
+						div
+							//- include partials/page-2
+						div.page-slide 3
+						div.page-slide 4
+						div.page-slide 5

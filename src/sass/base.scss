@@ -2,4 +2,9 @@
 	font-family: 'Montserrat', sans-serif;
 	background-color: $color-bg;
 	color: $color-font;
+	overflow: hidden;
+}
+
+.container-fluid.has-width-limit {
+	max-width: 1600px;
 }

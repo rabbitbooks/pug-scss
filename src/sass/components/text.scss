@@ -1,0 +1,29 @@
+.text-title-main {
+	font-size: 77px;
+	font-weight: 900;
+	line-height: 74px;
+}
+
+.text-title-sm {
+	font-size: 18px;
+	margin: 0 0 20px;
+	line-height: 1.2;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.text-p {
+	line-height: 1.5;
+	font-size: 16px;
+	margin: 0;
+}
+
+.text-widget {
+	transition: 0.2 all;
+	opacity: 0.5;
+	max-width: 270px;
+
+	&:hover {
+		opacity: 1;
+	}
+}

@@ -14,6 +14,10 @@ const initPageSlider = () => {
 		}
 	})
 
+	$slider.on('afterChange', function(event, slick, currentSlide){
+		console.log(++currentSlide);
+	});
+
 	$slider.swipe({
 		swipe: (e, direction, distance, duration, fingerCount, fingerData) => {
 			if (direction == 'up') {
@@ -27,5 +31,5 @@ const initPageSlider = () => {
 }
 
 $(document).ready(() => {
-	initPageSlider()
+	initPageSlider()	
 })

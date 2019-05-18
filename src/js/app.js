@@ -30,6 +30,17 @@ const initPageSlider = () => {
 	})
 }
 
+const initWorkSlider = () => {
+	const $workSlider = $('.js-work-slide');
+	$workSlider.slick({
+		slidesToShow: 3,
+		loop: true,
+		centerMode: true,
+		arrows: true
+	})
+}
+
 $(document).ready(() => {
-	initPageSlider()	
+	initPageSlider()
+	initWorkSlider()
 })

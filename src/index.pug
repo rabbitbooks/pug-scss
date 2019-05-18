@@ -5,12 +5,12 @@ block variables
 
 block content
 	div(class=`${bodyClass}_inner`)
-		.container-fluid 
+		.container-fluid.has-width-limit
 			.row
 				.col-md-1
 					aside
 						nav.navigation
-				.col-md-10
+				.col-md-11
 					main.js-page-slider.page-slider
 						div
 							include partials/page-1

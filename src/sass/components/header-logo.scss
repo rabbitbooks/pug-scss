@@ -1,0 +1,22 @@
+.header-logo {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: white;
+
+	&:hover {
+		color: white;
+		text-decoration: none;
+	}
+}
+
+.header-logo__img {
+	display: inline-block;
+}
+
+.header-logo__title {
+	display: inline-block;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 4px 0 0 12px;
+}

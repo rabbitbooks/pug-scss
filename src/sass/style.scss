@@ -14,10 +14,14 @@
 @import "variables"; 
 @import "mixins";
 @import "placeholders";
-
 @import "base";
+
+// components
 @import "components/text";
 @import "components/buttons";
+@import "components/header";
+@import "components/header-logo";
+
 
 @import "pages/page-slider";
 // @import "pages/work-slider";

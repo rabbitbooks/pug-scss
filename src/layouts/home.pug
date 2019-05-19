@@ -12,10 +12,15 @@ html(lang="en")
 		link(rel="stylesheet", href="css/style.css")
 
 	body(class=`${bodyClass}`)
+		.container-fluid.has-width-limit
+			include ../partials/menu
+		div(class=`${bodyClass}_inner`)
+			.container-fluid.has-width-limit
+				header.header
+					block header
+				block content
 
-		block content
-
-		block scripts
+				block scripts
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js")

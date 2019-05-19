@@ -1,5 +1,4 @@
-const $slider = $('.js-page-slider');
-
+const $slider = $('.js-page-slider')
 const initPageSlider = () => {
 	$slider.slick({
 		arrows: false,
@@ -27,8 +26,8 @@ const initPageSlider = () => {
 	})
 }
 
+const $workSlider = $('.js-work-slide')
 const initWorkSlider = () => {
-	const $workSlider = $('.js-work-slide');
 	$workSlider.slick({
 		slidesToShow: 3,
 		loop: true,
@@ -42,10 +41,10 @@ $(document).ready(() => {
 	initWorkSlider()
 })
 
-$slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-	if (++nextSlide == 1) {
-		$(".header .btn-main").addClass("btn-main--is_hidden")
+$slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+	if (++nextSlide == 1 &&  event.target.classList.contains('js-page-slider')) {
+		$('.header .btn-main').addClass('btn-main--is_hidden')
 	} else {
-		$(".header .btn-main").removeClass("btn-main--is_hidden")
+		$('.header .btn-main').removeClass('btn-main--is_hidden')
 	}
 })

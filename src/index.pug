@@ -3,19 +3,27 @@ extends layouts/home
 block variables
 	-var bodyClass="page"
 
+block header
+	.row
+		.col-md-2.d-flex.align-items-center
+			a.header-logo(href="#")
+				img.header-logo__img(src="img/logo.png", alt="Логотип")
+				span.header-logo__title Global
+		.col-md-8.d-flex.justify-content-center.align-items-center
+			a(href="#!").btn-main.btn-main--is_hidden
+				span.btn-main__text Hire us
+
 block content
-	div(class=`${bodyClass}_inner`)
-		.container-fluid.has-width-limit
-			.row
-				.col-md-1
-					aside
-						nav.navigation
-				.col-md-11
-					main.js-page-slider.page-slider
-						div
-							include partials/page-1
-						div.page-slide 2
-							//- include partials/page-2
-						div.page-slide 3
-						div.page-slide 4
-						div.page-slide 5
+	.row
+		.col-md-1
+			aside
+				nav.navigation
+		.col-md-11
+			main.js-page-slider.page-slider
+				div
+					include partials/page-1
+				div.page-slide 2
+					//- include partials/page-2
+				div.page-slide 3
+				div.page-slide 4
+				div.page-slide 5

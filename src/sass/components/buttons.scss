@@ -3,15 +3,17 @@
 	position: relative;
 	color: #fff;
 	font-size: 14px;
-	padding: 13px 0;
+	padding: 9px 16px;
 	font-weight: 500;
+	opacity: 1;
+	transition: .5s opacity;
 
 	&:before {
 		@extend %pseudo;
 		transition: .2s all;
 		top: 0;
-		left: 10px;
-		right: -10px;
+		left: 0px;
+		right: 0px;
 		height: 100%;
 		background-color: $color-accent;
 		z-index: 0;
@@ -19,18 +21,35 @@
 
 	&:hover {
 		color: #fff;
-		&:before {
-			left: -10px;
-		}
+	}
+}
+
+.btn-main--is_hidden {
+	opacity: 0;
+	z-index: -1;
+}
+
+.btn-inner {
+	padding: 13px 0;
+
+	&:before {
+		left: 10px;
+		right: -10px;
+		height: 100%;
 	}
 
-	span, img {
-		position: relative;
-		z-index: 1;
+	&:hover:before {
+		left: -10px;
 	}
+}
 
-	img {
-		display: inline-block;
-		margin-left: 15px;
-	}
+.btn-main .btn-main__text, 
+.btn-main .btn-main__img {
+	position: relative;
+	display: inline-block;
+	z-index: 1;
+}
+
+.btn-main__img {
+	margin-left: 15px;
 }

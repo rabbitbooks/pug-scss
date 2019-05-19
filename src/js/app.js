@@ -1,5 +1,6 @@
+const $slider = $('.js-page-slider');
+
 const initPageSlider = () => {
-	const $slider = $('.js-page-slider');
 	$slider.slick({
 		arrows: false,
 		vertical: true
@@ -13,10 +14,6 @@ const initPageSlider = () => {
 			$slider.slick('slickPrev')
 		}
 	})
-
-	$slider.on('afterChange', function(event, slick, currentSlide){
-		console.log(++currentSlide);
-	});
 
 	$slider.swipe({
 		swipe: (e, direction, distance, duration, fingerCount, fingerData) => {
@@ -43,4 +40,12 @@ const initWorkSlider = () => {
 $(document).ready(() => {
 	initPageSlider()
 	initWorkSlider()
+})
+
+$slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+	if (++nextSlide == 1) {
+		$(".header .btn-main").addClass("btn-main--is_hidden")
+	} else {
+		$(".header .btn-main").removeClass("btn-main--is_hidden")
+	}
 })

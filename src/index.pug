@@ -4,26 +4,19 @@ block variables
 	-var bodyClass="page"
 
 block header
-	.row
-		.col-md-2.d-flex.align-items-center
-			a.header-logo(href="#")
-				img.header-logo__img(src="img/logo.png", alt="Логотип")
-				span.header-logo__title Global
-		.col-md-8.d-flex.justify-content-center.align-items-center
-			a(href="#!").btn-main.btn-main--is_hidden
-				span.btn-main__text Hire us
+	a.header-logo(href="#")
+		img.header-logo__img(src="img/logo.png", alt="Логотип")
+		span.header-logo__title Global
+	a(href="#!").btn-main.btn-main--is_hidden
+		span.btn-main__text Hire us
 
 block content
-	.row
-		.col-md-1
-			aside
-				nav.navigation
-		.col-md-11
-			main.js-page-slider.page-slider
-				div
-					include partials/page-1
-				div
-					include partials/page-2
-				div.page-slide 3
-				div.page-slide 4
-				div.page-slide 5
+	aside
+		nav.navigation
+			include partials/aside-nav
+	main.js-page-slider.page-slider
+		include partials/page-1
+		include partials/page-2
+		section.page-slide 3
+		section.page-slide 4
+		section.page-slide 5

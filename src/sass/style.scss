@@ -1,27 +1,21 @@
-// Bootstrap
-@import "node_modules/bootstrap/scss/functions";
-@import "node_modules/bootstrap/scss/variables";
-@import "node_modules/bootstrap/scss/mixins";
-@import "node_modules/bootstrap/scss/reboot";
-
-@import "node_modules/bootstrap/scss/grid";
-@import "node_modules/bootstrap/scss/utilities/display";
-@import "node_modules/bootstrap/scss/utilities/flex";
-@import "node_modules/bootstrap/scss/utilities/float";
-@import "node_modules/bootstrap/scss/utilities/clearfix";
-
-// custom style
+// helpers
+@import "normaliser";
 @import "variables"; 
 @import "mixins";
 @import "placeholders";
 @import "base";
 
+// blocks
+@import "blocks/buttons";
+@import "blocks/header-logo";
+@import "blocks/text-widget";
+@import "blocks/intro-banner";
+
 // components
 @import "components/text";
-@import "components/buttons";
 @import "components/header";
-@import "components/header-logo";
+@import "components/js-page-slider";
 
-
-@import "pages/page-slider";
-// @import "pages/work-slider";
+// pages
+@import "pages/page-1";
+@import "pages/page-2";

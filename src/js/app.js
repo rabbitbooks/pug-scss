@@ -1,31 +1,3 @@
-const $slider = $('.js-page-slider')
-const initPageSlider = () => {
-	$slider.slick({
-		arrows: false,
-		vertical: true
-	})
-
-	$slider.mousewheel((e) => {
-		e.preventDefault()
-		if (e.deltaY < 0) {
-			$slider.slick('slickNext')
-		} else {
-			$slider.slick('slickPrev')
-		}
-	})
-
-	$slider.swipe({
-		swipe: (e, direction, distance, duration, fingerCount, fingerData) => {
-			if (direction == 'up') {
-				$slider.slick('slickNext')
-			} else {
-				$slider.slick('slickPrev')
-			}
-		},
-		treshold: 0
-	})
-}
-
 const $workSlider = $('.js-work-slide')
 const initWorkSlider = () => {
 	$workSlider.slick({
@@ -37,14 +9,64 @@ const initWorkSlider = () => {
 }
 
 $(document).ready(() => {
-	initPageSlider()
+	// initPageSlider()
 	initWorkSlider()
 })
 
-$slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-	if (++nextSlide == 1 &&  event.target.classList.contains('js-page-slider')) {
-		$('.header .btn-main').addClass('btn-main--is_hidden')
+
+const $slider = $('.js-page-slider')
+const asideNavi = document.querySelectorAll('.navi li');
+const pages = document.querySelectorAll('.js-page-slider section');
+
+const findActiveSlide = () => {
+	let slideNum;
+	pages.forEach((item, index) => {
+		if (item.classList.contains('page-slide--is-active')) {
+			slideNum = index
+		}
+	})
+	return slideNum
+}
+
+let isAnimationComplite = true
+
+const changeSlide = (activeSlide, targetSlide) => {
+	if (activeSlide == targetSlide || !isAnimationComplite) return
+	isAnimationComplite = false
+
+	const pagesCount = pages.length - 1
+
+	if (targetSlide > pagesCount) {
+		targetSlide = 0
+	} else if (targetSlide < 0) {
+		targetSlide = pagesCount
+	}
+
+	if (targetSlide != 0) {
+		document.querySelector('.header.btn-main')
+	}
+
+	const direction = activeSlide < targetSlide ? 'up' : 'down'
+	pages[activeSlide].classList.remove('page-slide--is-active')
+	pages[targetSlide].classList.add('page-slide--is-active', `slide_${direction}`)
+
+	setTimeout(() => {
+		isAnimationComplite = true
+	}, 500)
+}
+
+asideNavi.forEach((item, index) => {
+	item.onclick = () => {
+		changeSlide(findActiveSlide(), index)
+	}
+})
+
+$slider.mousewheel((e) => {
+	e.preventDefault()
+	let activeSlide = findActiveSlide()
+	if (e.deltaY < 0) {
+		changeSlide(activeSlide, ++activeSlide)
 	} else {
-		$('.header .btn-main').removeClass('btn-main--is_hidden')
+		changeSlide(activeSlide, --activeSlide)
 	}
 })

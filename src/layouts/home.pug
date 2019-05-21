@@ -12,10 +12,9 @@ html(lang="en")
 		link(rel="stylesheet", href="css/style.css")
 
 	body(class=`${bodyClass}`)
-		.container-fluid.has-width-limit
-			include ../partials/menu
-		div(class=`${bodyClass}_inner`)
-			.container-fluid.has-width-limit
+		div.class(class=`${bodyClass}_wrapper`)
+			//- include ../partials/menu
+			div(class=`${bodyClass}_inner`)
 				header.header
 					block header
 				block content

@@ -1,0 +1,34 @@
+.text-widget {
+  padding-left: 15px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.text-widget__item {
+	max-width: 250px;
+}
+
+.text-widget__link {
+	color: $color-light-gray;
+	transition: color .2s ease-in-out;
+	display: block;
+	cursor: pointer;
+
+	&:hover {
+		color: $color-white;
+		text-decoration: none;
+	}
+}
+
+.text-widget__title {
+	font-size: 16px;
+	text-transform: uppercase;
+	margin: 1em 0;
+	font-weight: 700;
+}
+
+.text-widget__text {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 22px;
+}

@@ -1,10 +1,10 @@
 .btn-main {
 	@extend %btn-base;
 	position: relative;
-	color: #fff;
+	color: $color-white;
 	font-size: 14px;
 	padding: 9px 16px;
-	font-weight: 500;
+	font-weight: 700;
 	opacity: 1;
 	transition: .5s opacity;
 
@@ -20,27 +20,13 @@
 	}
 
 	&:hover {
-		color: #fff;
+		color: $color-white;
 	}
 }
 
 .btn-main--is_hidden {
 	opacity: 0;
 	z-index: -1;
-}
-
-.btn-inner {
-	padding: 13px 0;
-
-	&:before {
-		left: 10px;
-		right: -10px;
-		height: 100%;
-	}
-
-	&:hover:before {
-		left: -10px;
-	}
 }
 
 .btn-main .btn-main__text, 
@@ -51,5 +37,21 @@
 }
 
 .btn-main__img {
-	margin-left: 15px;
+	margin: -3px 0 0 11px;
+	width: 15px;
+	height: 11px;
+}
+
+.btn-inner {
+	padding: 9px 12px;
+
+	&:before {
+		left: 22px;
+		right: 0px;
+		height: 100%;
+	}
+
+	&:hover:before {
+		left: 0px;
+	}
 }

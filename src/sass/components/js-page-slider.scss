@@ -12,10 +12,18 @@
 	left: 0;
 	opacity: 0;
 	visibility: hidden;
-	transition: all .2s;
+	transition: opacity .4s ease-in-out, visibility 0s .4s, transform .4s ease-in-out;
 }
 
 .page-slide--is-active {
 	opacity: 1;
 	visibility: visible;
+	transition: opacity .4s ease-in .4s;
+}
+
+.page-slide--slide-up {
+	transform: translateY(-100px);
+}
+.page-slide--slide-down {
+	transform: translateY(100px);
 }

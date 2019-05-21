@@ -15,7 +15,7 @@ $(document).ready(() => {
 
 
 const $slider = $('.js-page-slider')
-const asideNavi = document.querySelectorAll('.navi li');
+const asideNavi = document.querySelectorAll('.side-nav li');
 const pages = document.querySelectorAll('.js-page-slider section');
 
 const findActiveSlide = () => {
@@ -47,12 +47,18 @@ const changeSlide = (activeSlide, targetSlide) => {
 	}
 
 	const direction = activeSlide < targetSlide ? 'up' : 'down'
+	
 	pages[activeSlide].classList.remove('page-slide--is-active')
-	pages[targetSlide].classList.add('page-slide--is-active', `slide_${direction}`)
+	pages[activeSlide].classList.add(`page-slide--slide-${direction}`)
+	pages[targetSlide].classList.add('page-slide--is-active')
+	pages[targetSlide].classList.remove('page-slide--slide-up', 'page-slide--slide-down')
+	asideNavi[activeSlide].classList.remove('side-nav__item--is-active')
+	asideNavi[targetSlide].classList.add('side-nav__item--is-active')
+
 
 	setTimeout(() => {
 		isAnimationComplite = true
-	}, 500)
+	}, 200)
 }
 
 asideNavi.forEach((item, index) => {

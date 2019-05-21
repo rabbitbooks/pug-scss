@@ -12,16 +12,20 @@ html(lang="en")
 		link(rel="stylesheet", href="css/style.css")
 
 	body(class=`${bodyClass}`)
-		div.class(class=`${bodyClass}_wrapper`)
-			//- include ../partials/menu
-			div(class=`${bodyClass}_inner`)
-				header.header
-					block header
-				block content
+		div(class=`${bodyClass}__wrapper`)
+			.perspective-container
+				.return-view
+				.viewport
+					div(class=`${bodyClass}__inner`)
+						header.header
+							block header
+						block content
 
-				block scripts
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js")
-		script(src="js/app.js")
+			include ../partials/menu
+
+	block scripts
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js")
+	script(src="js/app.js")

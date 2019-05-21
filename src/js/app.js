@@ -15,8 +15,9 @@ $(document).ready(() => {
 
 
 const $slider = $('.js-page-slider')
-const asideNavi = document.querySelectorAll('.side-nav li');
-const pages = document.querySelectorAll('.js-page-slider section');
+const asideNavi = document.querySelectorAll('.side-nav li')
+const pages = document.querySelectorAll('.js-page-slider section')
+const menuItems = document.querySelectorAll('.main-menu__item')
 
 const findActiveSlide = () => {
 	let slideNum;
@@ -34,6 +35,7 @@ const changeSlide = (activeSlide, targetSlide) => {
 	if (activeSlide == targetSlide || !isAnimationComplite) return
 	isAnimationComplite = false
 
+	const direction = activeSlide < targetSlide ? 'up' : 'down'
 	const pagesCount = pages.length - 1
 
 	if (targetSlide > pagesCount) {
@@ -45,8 +47,6 @@ const changeSlide = (activeSlide, targetSlide) => {
 	if (targetSlide != 0) {
 		document.querySelector('.header.btn-main')
 	}
-
-	const direction = activeSlide < targetSlide ? 'up' : 'down'
 	
 	pages[activeSlide].classList.remove('page-slide--is-active')
 	pages[activeSlide].classList.add(`page-slide--slide-${direction}`)
@@ -54,11 +54,13 @@ const changeSlide = (activeSlide, targetSlide) => {
 	pages[targetSlide].classList.remove('page-slide--slide-up', 'page-slide--slide-down')
 	asideNavi[activeSlide].classList.remove('side-nav__item--is-active')
 	asideNavi[targetSlide].classList.add('side-nav__item--is-active')
+	menuItems[activeSlide].classList.remove('main-menu__item--is-active')
+	menuItems[targetSlide].classList.add('main-menu__item--is-active')
 
 
 	setTimeout(() => {
 		isAnimationComplite = true
-	}, 200)
+	}, 400)
 }
 
 asideNavi.forEach((item, index) => {
@@ -76,3 +78,32 @@ $slider.mousewheel((e) => {
 		changeSlide(activeSlide, --activeSlide)
 	}
 })
+
+const menuButton = document.querySelector('.main-menu-btn')
+const screen = document.querySelector('.page__wrapper')
+const returnView = document.querySelector('.return-view')
+
+
+menuItems.forEach((item, index) => {
+	item.onclick = () => {
+		const activeSlide = findActiveSlide()
+		menuItems[activeSlide].classList.remove('main-menu__item--is-active')
+		menuItems[index].classList.add('main-menu__item--is-active')
+
+		setTimeout(() => {
+			screen.classList.remove('perspective')
+		}, 70)
+		
+		setTimeout(() => {
+			changeSlide(activeSlide, index)
+		}, 570)
+	}
+})
+
+returnView.onclick = () => {
+	screen.classList.remove('perspective')
+}
+
+menuButton.onclick = () => {
+	screen.classList.add('perspective')
+}

@@ -54,7 +54,7 @@
 		font-weight: 500;
 		left: 10px;
 		top: 3px;
-		transition: left ease-in-out .1s;
+		transition: transform ease-in-out .1s;
 	}
 }
 
@@ -85,10 +85,10 @@ $i: 5;
 
 .side-nav__item--is-active {
 	&:before {
-		left: -24px;
+		transform: translateX(-34px);
 		color: $color-white;
 		font-weight: 500;
-		transition: left ease-in-out .2s;
+		transition-delay: 50ms;
 	}
 }
 

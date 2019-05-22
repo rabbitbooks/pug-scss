@@ -43,11 +43,14 @@ const changeSlide = (activeSlide, targetSlide) => {
 	} else if (targetSlide < 0) {
 		targetSlide = pagesCount
 	}
-
-	if (targetSlide != 0) {
-		document.querySelector('.header.btn-main')
-	}
 	
+	const headerButton = document.querySelector('.header .btn-main')
+	if (targetSlide != 0) {
+		headerButton.classList.remove('btn-main--is_hidden')
+	} else {
+		headerButton.classList.add('btn-main--is_hidden')
+	}
+
 	pages[activeSlide].classList.remove('page-slide--is-active')
 	pages[activeSlide].classList.add(`page-slide--slide-${direction}`)
 	pages[targetSlide].classList.add('page-slide--is-active')
@@ -96,7 +99,7 @@ menuItems.forEach((item, index) => {
 		
 		setTimeout(() => {
 			changeSlide(activeSlide, index)
-		}, 570)
+		}, 430)
 	}
 })
 

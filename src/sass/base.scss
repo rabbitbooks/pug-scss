@@ -70,3 +70,9 @@ a {
 .page__wrapper.perspective .return-view {
 	display: block;
 }
+
+.page-container-contacts {
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: row;
+}

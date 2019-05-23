@@ -9,8 +9,11 @@
 @import "blocks/buttons";
 @import "blocks/header-logo";
 @import "blocks/text-widget";
+@import "blocks/banner";
 @import "blocks/intro-banner";
 @import "blocks/work-slider";
+@import "blocks/about-banner";
+@import "blocks/about-options";
 
 // components
 @import "components/text";
@@ -20,5 +23,5 @@
 @import "components/main-menu";
 
 // pages
-@import "pages/page-1";
 @import "pages/page-2";
+@import "pages/page-3";

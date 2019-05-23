@@ -24,6 +24,19 @@
 	}
 }
 
+.btn-main.btn-main--bgr_none {
+	padding: 0;
+
+	&:before {
+		display: none;
+	}
+	&:hover {
+		.btn-main__img{
+			transform: translateX(4px);
+		}
+	}
+}
+
 .btn-main__header-btn {
 	position: absolute;
 	top: 18px;
@@ -47,6 +60,7 @@
 	margin: -3px 0 0 11px;
 	width: 15px;
 	height: 11px;
+	transition: .2s transform;
 }
 
 .btn-inner {

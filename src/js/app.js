@@ -29,7 +29,7 @@ const changeSlide = (activeSlide, targetSlide) => {
 	}
 	
 	const headerButton = document.querySelector('.header .btn-main')
-	if (targetSlide != 0) {
+	if (targetSlide != 0 && targetSlide != 4) {
 		headerButton.classList.remove('btn-main--is_hidden')
 	} else {
 		headerButton.classList.add('btn-main--is_hidden')
@@ -48,6 +48,11 @@ const changeSlide = (activeSlide, targetSlide) => {
 	setTimeout(() => {
 		isAnimationComplite = true
 	}, 400)
+}
+const hireButton = document.querySelector('.hire-btn')
+
+hireButton.onclick = () => {
+	changeSlide(findActiveSlide(), 4)
 }
 
 asideNavi.forEach((item, index) => {

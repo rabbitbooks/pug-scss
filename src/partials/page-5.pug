@@ -1,0 +1,41 @@
+- var checkMark = '<svg class="work-request-options__svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve"><g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)"><path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"></path></g></svg>'
+
+section.page-slide
+	.page-container.hire
+		h2.text-page-title.text-page-title--margin-b_larger You want us to do
+		form.work-request
+			.work-request-options
+				span.work-request-options__container.work-request-options__container-1
+					.work-request-options__item
+						input(type="checkbox" id="appDisign" class="work-request-options__checkbox")
+						label(for="appDisign" class="work-request-options__checkbox-label")!= checkMark
+							| App Disign
+					.work-request-options__item
+						input(type="checkbox" id="graphDisign" class="work-request-options__checkbox")
+						label(for="graphDisign" class="work-request-options__checkbox-label")!= checkMark
+							| Graphic Design
+					.work-request-options__item
+						input(type="checkbox" id="motDisign" class="work-request-options__checkbox")
+						label(for="motDisign" class="work-request-options__checkbox-label")!= checkMark
+							| Motion Design
+				span.work-request-options__container.work-request-options__container-2
+					.work-request-options__item
+						input(type="checkbox" id="UXDisign" class="work-request-options__checkbox")
+						label(for="UXDisign" class="work-request-options__checkbox-label")!= checkMark
+							| UX Design
+					.work-request-options__item
+						input(type="checkbox" id="webdesign" class="work-request-options__checkbox")
+						label(for="webdesign" class="work-request-options__checkbox-label")!= checkMark
+							| Webdesign
+					.work-request-options__item
+						input(type="checkbox" id="marketing" class="work-request-options__checkbox")
+						label(for="marketing" class="work-request-options__checkbox-label")!= checkMark
+							| Marketing
+			.work-request-user-info
+				.work-request-user-info__item
+					input(type="text" id="name" class="work-request-user-info__fild" required)
+					label(for="name" class="work-request-user-info__input-label") Name
+				.work-request-user-info__item
+					input(type="text" id="email" class="work-request-user-info__fild" required)
+					label(for="email" class="work-request-user-info__input-label") Email
+			input.work-request__btn-submit(type="submit" value="Send request")

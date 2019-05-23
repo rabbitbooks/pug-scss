@@ -98,27 +98,38 @@ menuButton.onclick = () => {
 
 
 const nextWorkSlide = (workSlider) => {
-	workSlider.find('.work-slider__item:first-child').clone().appendTo(workSlider)
-	workSlider.find('.work-slider__item:first-child').remove()
-}
-const prevWorkSlide = (workSlider) => {
 	workSlider.find('.work-slider__item:last-child').clone().prependTo(workSlider)
 	workSlider.find('.work-slider__item:last-child').remove()
+}
+const prevWorkSlide = (workSlider) => {
+	workSlider.find('.work-slider__item:first-child').clone().appendTo(workSlider)
+	workSlider.find('.work-slider__item:first-child').remove()
 }
 
 
 const $sliderButtons = $('.work-slider__button'),
 	$workSlider = $('.work-slider__wrapper')
 
-function slideChange($clickedButton) {
+function slideChange($clickedButton, direction = null) {
 	let $workSlides = $('.work-slider__wrapper li')
 	$workSlides.map((index, element) => {
 		$(element).addClass('work-slider__item')
 	})
-	
-	if ($clickedButton.hasClass('work-slider__button--prev')) {
-		prevWorkSlide($workSlider)
+
+	let clickDirection
+	if ($clickedButton) {
+		clickDirection = $clickedButton.hasClass('work-slider__button--prev') 
+			? 
+			clickDirection = $clickedButton.hasClass('work-slider__button--prev')
+			:
+			clickDirection = $clickedButton.hasClass('work-slider__button--next')
 	} else {
+		clickDirection = false
+	}
+	
+	if (clickDirection || direction == 'left') {
+		prevWorkSlide($workSlider)
+	} else if (clickDirection || direction == 'right') {
 		nextWorkSlide($workSlider)
 	}
 	
@@ -139,10 +150,22 @@ function slideChange($clickedButton) {
 	})
 }
 
-$sliderButtons.on('click', function() {
+function runSliderChange($cickedButton = null, direction) {
 	$workSlider.addClass('slide-change')
 	setTimeout(() => {
-		slideChange($(this))
+		slideChange($cickedButton, direction)
 		$workSlider.removeClass('slide-change')
 	}, 300)
+}
+
+$sliderButtons.on('click', function() {
+	runSliderChange($(this))
 })
+
+$(function() {
+	$(".work-slider").swipe( {
+		swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+			runSliderChange(null, direction)
+		}
+	});
+});

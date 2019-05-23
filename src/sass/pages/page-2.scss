@@ -1,7 +1,10 @@
 .page__work-slider {
-	
-}
-
-.work-slider {
+	width: 960px;
+	max-width: 80%;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
 	text-align: center;
 }

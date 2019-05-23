@@ -54,7 +54,7 @@
 		font-weight: 500;
 		left: 10px;
 		top: 3px;
-		transition: transform ease-in-out .1s;
+		transition: transform ease-in-out .3s;
 	}
 }
 
@@ -94,5 +94,5 @@ $i: 5;
 	opacity: 1;
 	visibility: visible;
 	font-weight: 500;
-	transition: opacity .2s ease-in-out .1s;
+	transition: opacity .4s ease-in-out .1s;
 }

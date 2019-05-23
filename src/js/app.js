@@ -49,11 +49,14 @@ const changeSlide = (activeSlide, targetSlide) => {
 		isAnimationComplite = true
 	}, 400)
 }
-const hireButton = document.querySelector('.hire-btn')
+const hireButton = document.querySelectorAll('.hire-btn')
 
-hireButton.onclick = () => {
-	changeSlide(findActiveSlide(), 4)
-}
+hireButton.forEach(item => {
+	item.onclick = () => {
+		changeSlide(findActiveSlide(), 4)
+	}
+})
+
 
 asideNavi.forEach((item, index) => {
 	item.onclick = () => {

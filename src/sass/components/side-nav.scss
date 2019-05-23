@@ -58,14 +58,12 @@
 	}
 }
 
-
-
 $i: 5;
 @while $i > 0 {
 	.side-nav__item:nth-child(#{$i}):before { 
 		content: '0#{$i}'; 
 	}
-  $i: $i - 1;
+	$i: $i - 1;
 }
 
 .side-nav__title {

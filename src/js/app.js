@@ -1,19 +1,3 @@
-const $workSlider = $('.js-work-slide')
-const initWorkSlider = () => {
-	$workSlider.slick({
-		slidesToShow: 3,
-		loop: true,
-		centerMode: true,
-		arrows: true
-	})
-}
-
-$(document).ready(() => {
-	// initPageSlider()
-	initWorkSlider()
-})
-
-
 const $slider = $('.js-page-slider')
 const asideNavi = document.querySelectorAll('.side-nav li')
 const pages = document.querySelectorAll('.js-page-slider section')
@@ -110,3 +94,55 @@ returnView.onclick = () => {
 menuButton.onclick = () => {
 	screen.classList.add('perspective')
 }
+
+
+
+const nextWorkSlide = (workSlider) => {
+	workSlider.find('.work-slider__item:first-child').clone().appendTo(workSlider)
+	workSlider.find('.work-slider__item:first-child').remove()
+}
+const prevWorkSlide = (workSlider) => {
+	workSlider.find('.work-slider__item:last-child').clone().prependTo(workSlider)
+	workSlider.find('.work-slider__item:last-child').remove()
+}
+
+
+const $sliderButtons = $('.work-slider__button'),
+	$workSlider = $('.work-slider__wrapper')
+
+function slideChange($clickedButton) {
+	let $workSlides = $('.work-slider__wrapper li')
+	$workSlides.map((index, element) => {
+		$(element).addClass('work-slider__item')
+	})
+	
+	if ($clickedButton.hasClass('work-slider__button--prev')) {
+		prevWorkSlide($workSlider)
+	} else {
+		nextWorkSlide($workSlider)
+	}
+	
+	$workSlides = $('.work-slider__wrapper li')
+	$workSlides.each((index, element) => {
+	
+	let slidePosition
+		if (index == 0 ) {
+			slidePosition = 'left'
+			$(element).removeClass().addClass('work-slider__item--' + slidePosition +' work-slider__item')
+		} else if (index == 1 ) {
+			slidePosition = 'center'
+			$(element).removeClass().addClass('work-slider__item--' + slidePosition +' work-slider__item')
+		} else if (index == 2 ) {
+			slidePosition = 'right'
+			$(element).removeClass().addClass('work-slider__item--' + slidePosition +' work-slider__item')
+		}
+	})
+}
+
+$sliderButtons.on('click', function() {
+	$workSlider.addClass('slide-change')
+	setTimeout(() => {
+		slideChange($(this))
+		$workSlider.removeClass('slide-change')
+	}, 300)
+})

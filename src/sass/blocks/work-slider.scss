@@ -1,0 +1,128 @@
+.work-slider {
+	position: relative;
+}
+
+.work-slider__button {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-48%);
+	height: 54px;
+	width: 54px;
+	border-radius: 50%;
+	background-color: $color-light-gray;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:before {
+		@extend %pseudo;
+		background: url(../img/arrow-right.png) center center no-repeat;
+		position: relative;
+		width: 18px;
+		height: 14px;
+		top: 1px;
+	}
+}
+
+.work-slider__button.work-slider__button--next {
+	left: 0;
+
+	&:before {
+		transform: rotate(180deg);
+	}
+}
+
+.work-slider__button.work-slider__button--prev {
+	right: 0;
+}
+
+.work-slider__wrapper {
+	display: flex;
+	opacity: 1;
+	justify-content: center;
+	transition: opacity .3s ease-in-out;
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.work-slider__item {
+	display: none;
+	margin: 0 auto;
+	text-align: center;	
+}
+
+.work-slider__item--center {
+	max-width: 285px;
+}
+
+@each $position in left, center, right {
+	.work-slider__item--#{$position} {
+		display: block;
+		position: absolute;
+	}
+}
+
+.work-slider__item--left {
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.work-slider__item--center {
+	top: 18px;
+	position: relative;
+}
+.work-slider__item--right {
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.slide-change {
+	opacity: 0;
+}
+
+.work-slider__img-wrapper {
+	height: 160px;
+	width: 160px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.work-slider__img {
+	width: 100%;
+}
+
+.work-slider__img-wrapper {
+	margin-bottom: 12px;
+}
+
+.work-slider__item--center .work-slider__img-wrapper {
+	width: 270px;
+	height: 270px;
+	margin: 0 auto 28px;
+}
+
+.title-inner.work-slider__title {
+	font-weight: 700;
+	font-size: 14px;
+	color: $color-light-gray;
+}
+
+.work-slider__item--center .title-inner.work-slider__title {
+	font-size: 16px;
+	margin-bottom: 18px;
+	color: $color-white;
+}
+
+.work-slider__text {
+	display: none;
+}
+
+.work-slider__item--center .work-slider__text {
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	color: $color-white;
+}

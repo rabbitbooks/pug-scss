@@ -6,6 +6,39 @@
 	margin: 0.67em 0;
 }
 
+.title-main__page-3 {
+	position: relative;
+	font-size: 75px;
+	line-height: 73px;
+
+	&:after {
+		@extend %pseudo;
+		background: url(../img/dot.jpg) center center no-repeat;
+		width: 9px;
+		height: 9px;
+		bottom: 9px;
+		left: 286px;
+	}
+}
+
+.title-main__i-dot {
+	position: relative;
+
+	&:before {
+		@extend %pseudo;
+		background: url(../img/i-dot.png) center center no-repeat;
+		width: 236px;
+		height: 119px;
+		right: -132px;
+		top: -90px;
+		z-index: 1;
+	}
+}
+
+.btn-main__text--transform_upper {
+	text-transform: uppercase;
+}
+
 .title-inner {
 	font-size: 18px;
 	margin: 0 0 20px;

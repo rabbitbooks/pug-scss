@@ -1,0 +1,45 @@
+.about-options {
+	display: flex;
+	justify-content: space-between;
+	max-width: 600px;
+}
+
+.about-options__item {
+	position: relative;
+	text-decoration: none;
+	width: 150px;
+	height: 75px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border: $color-accent 10px solid;
+
+	&:nth-child(1) {
+		background-image: url(../img/winners.jpg);
+	}
+
+	&:nth-child(2) {
+		background-image: url(../img/philosophy.jpg);
+	}
+
+	&:nth-child(3) {
+		background-image: url(../img/history.jpg);
+	}
+
+	&:hover {
+		.about-options__title {
+			transform: translateY(14px);
+		}
+	}
+}
+
+.about-options__title {
+	position: absolute;
+	bottom: -17px;
+	left: 10px;
+	text-transform: uppercase;
+	color: $color-white;
+	font-weight: 800;
+	font-size: 16px;
+	transition: transform .2s ease-in-out;
+}

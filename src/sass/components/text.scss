@@ -2,7 +2,7 @@
 	font-size: 70px;
 	font-weight: 900;
 	letter-spacing: -0.01em;
-	line-height: 67px;
+	line-height: 1;
 	margin: 0.67em 0;
 }
 
@@ -63,4 +63,43 @@
 
 .text-page-title--margin-b_larger {
 	margin-bottom: 55px;
+}
+
+@media (max-width: $md) {
+	.title-main {
+		font-size: 57px;
+	}
+
+	.title-main__page-3 {
+		font-size: 75px;
+	}
+}
+
+@media (max-width: $sm) {
+	.title-main {
+		font-size: 44px;
+	}
+
+	.title-main__page-3 {
+		line-height: 1;
+	}
+
+	.title-main__i-dot:before{
+		right: -137px;
+		top: -102px;
+	}
+}
+
+@media (max-width: $xs) {
+	.title-main {
+		font-size: 55px;
+		margin-top: 0;
+	}
+}
+
+@media (max-width: $xs) {
+	.title-main__i-dot:before {
+		right: -135px;
+		top: -98px;
+	}
 }

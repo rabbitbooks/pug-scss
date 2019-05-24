@@ -76,3 +76,21 @@ a {
 	justify-content: flex-end;
 	flex-direction: row;
 }
+
+@media (max-width: $lg) {
+	.page-container {
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 1100px) {
+	.page-container-contacts {
+		max-width: 90%;
+	}
+}
+
+@media (max-width: $sm) {
+	.page-container-contacts {
+		justify-content: center;
+	}
+}

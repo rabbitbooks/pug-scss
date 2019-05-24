@@ -74,6 +74,17 @@ $slider.mousewheel((e) => {
 	}
 })
 
+// $slider.swipe( {
+// 	swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+// 		let activeSlide = findActiveSlide()
+// 		if (direction == 'up') {
+// 			changeSlide(activeSlide, ++activeSlide)
+// 		} else if (direction == 'down') {
+// 			changeSlide(activeSlide, --activeSlide)
+// 		}
+// 	}
+// })
+
 const menuButton = document.querySelector('.main-menu-btn')
 const screen = document.querySelector('.page__wrapper')
 const returnView = document.querySelector('.return-view')
@@ -175,5 +186,5 @@ $(function() {
 		swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
 			runSliderChange(null, direction)
 		}
-	});
-});
+	})
+})

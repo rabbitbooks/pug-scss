@@ -31,3 +31,18 @@
 	font-weight: 500;
 	line-height: 22px;
 }
+
+@media (max-width: $sm) {
+	.text-widget {
+		flex-direction: column;
+	}
+	.text-widget__item {
+		max-width: initial;
+	}
+}
+
+@media (max-width: $xs) {
+	.text-widget {
+		display: none;
+	}
+}

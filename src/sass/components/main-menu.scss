@@ -104,3 +104,15 @@
 .page__wrapper.perspective .main-menu__item:nth-child(5) {
 	transition-delay: .16s;
 }
+
+@media (max-width: $sm) {
+	.main-menu__item {
+		font-size: 44px;
+	}
+}
+
+@media (max-width: $xs) {
+	.main-menu__item {
+		font-size: 34px;
+	}
+}

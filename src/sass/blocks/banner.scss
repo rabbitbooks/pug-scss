@@ -9,3 +9,46 @@
 	bottom: 2px;
 	right: -17px;
 }
+
+@media (max-width: $md) {
+	.banner {
+		height: 380px;
+	}
+
+	.banner__img {
+		width: 430px;
+	}
+
+	.about-banner {
+		height: 475px;
+	}
+
+	.about-banner__img {
+		width: initial;
+	}
+}
+
+@media (max-width: $sm) {
+	.banner {
+		height: 305px;
+	}
+
+	.banner__img {
+		width: 330px;
+	}
+}
+
+@media (max-width: $xs) {
+	.banner {
+		height: auto;
+	}
+
+	.intro-banner:before,
+	.intro-banner:after {
+		display: none;
+	}
+
+	.banner__img {
+		display: none;
+	}
+}

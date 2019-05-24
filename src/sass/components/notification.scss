@@ -1,0 +1,33 @@
+.notification {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 999;
+	background-color: $color-bg;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	display: none;
+}
+
+.notification__text {
+	width: 70%;
+	margin-top: 30px;
+	font-weight: 700;
+	text-align: center;
+	font-size: 14px;
+	line-height: 1.6;
+} 
+
+@media (max-width: $xxs) {
+	.notification {
+		display: flex;
+	}
+}
+
+@media (max-height: 400px) {
+	.notification {
+		display: flex;
+	}
+}
